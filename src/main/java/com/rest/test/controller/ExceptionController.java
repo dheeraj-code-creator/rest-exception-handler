@@ -19,7 +19,7 @@ public class ExceptionController {
 	public ResponseEntity<List<ErrorDto>> handleNotFoundException(NotFoundException e){
 		final String message = "The provide ID  " + e.getMessage() +" " + "was not found.";
 		final List<ErrorDto> errorDto = new ArrayList<>();
-		errorDto.add(new ErrorDto("404", message, e.getValue() ));
+		errorDto.add(new ErrorDto("400", message, e.getValue() ));
 		return new ResponseEntity<>(errorDto, HttpStatus.BAD_REQUEST);
 	}
 	
